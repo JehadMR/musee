@@ -48,6 +48,8 @@ function ProfileCard () {
   return (
 
   <div className="flex flex-col justify-center">
+  {session ? (
+    <>
   {result?.data?.item? (
   <div className="max-w-xl bg-white rounded-lg shadow-lg overflow-hidden md:h-55">
     <div className="relative  md:h-36 h-[40vw]">
@@ -88,11 +90,8 @@ function ProfileCard () {
         {getTimestamp(result?.data?.item?.duration_ms? result.data.item.duration_ms : 0) }
       </div>
     </div>
-    { result?.data?.device?.name? (
-      <div className="flex justify-between text-xs font-semibold text-gray-400 px-4 py-2">
-        <span>playing on {result.data.device.name}</span>
-      </div>) : null}
-  </div>
+
+  </div>) : null } </>
   ):
    (
     <div className="container mx-auto py-3">
@@ -119,7 +118,5 @@ function ProfileCard () {
   }
 export default ProfileCard
 
-function componentDidMount() {
-  throw new Error("Function not implemented.")
-}
+
 
