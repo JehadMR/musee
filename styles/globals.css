@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .headicon {
+        @apply h-6 w-6 pb-8 lg:w-9 lg:pl-3 text-2xl cursor-pointer lg:hover:text-blue-700
+    }
+
+}
+
+
+
