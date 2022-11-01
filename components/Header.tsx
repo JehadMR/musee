@@ -18,7 +18,7 @@ function header() {
     <div className="flex sticky top-0 z-50 md:px-8 py-2
                      backdrop-blur transition-colors duration-500 lg:z-50 border-b border-slate-900/10 dark:border-slate-50/[0.06] bg-white/75 supports-backdrop-blur:bg-white/60 dark:bg-transparent" >
         <div className="headerlogo relative h-10 w-20  flex-shrink-0 cursor-pointer">
-        <Image  object-fit="cover" src={logomain} alt={""} />
+        <Image object-fit="cover" height={40} src={logomain} alt={""} />
         </div>
 
        <div className="group flex items-center mx-0 md:mx-10  px-3 xl:min-w-[250px] border border-black rounded-md shadow-sm hover:cursor-pointer ">
@@ -32,7 +32,7 @@ function header() {
           <div className="hidden md:block w-full md:w-auto" id="mobile-menu">
             <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
               <li>
-                <a href="#" className="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded" aria-current="page">home</a>
+                <a href="/" className="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded" aria-current="page">home</a>
               </li>
               <li>
                 <a href="#" className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">news</a>

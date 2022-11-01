@@ -22,7 +22,6 @@ function ProfileCard () {
     if (loading == true) {
     axios.get("/api/currentplay").then((results) => {
       console.log(results)
-      console.log(session)
       setResult(results);
       setLoading(false);
     });
@@ -50,7 +49,7 @@ function ProfileCard () {
 
   <div className="flex flex-col justify-center">
   {result?.data?.item? (
-  <div className="max-w-xl bg-white rounded-lg shadow-lg overflow-hidden md:h-80">
+  <div className="max-w-xl bg-white rounded-lg shadow-lg overflow-hidden md:h-55">
     <div className="relative  md:h-36 h-[40vw]">
         {/*  object cover img normal */}
         <div className="h-auto">
@@ -62,6 +61,7 @@ function ProfileCard () {
         <span className="opacity-70">{result?.data?.item?.album?.name? result.data.item.album.name : "sign in" } - {result?.data?.item?.artists? result.data.item.artists[0].name : ""}</span>
       </div>
     </div>
+    
     <div>
       <div className="relative h-1 bg-gray-200">
         <div className="absolute h-full w-1/2  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 flex items-center justify-end">
@@ -88,7 +88,10 @@ function ProfileCard () {
         {getTimestamp(result?.data?.item?.duration_ms? result.data.item.duration_ms : 0) }
       </div>
     </div>
-
+    { result?.data?.device?.name? (
+      <div className="flex justify-between text-xs font-semibold text-gray-400 px-4 py-2">
+        <span>playing on {result.data.device.name}</span>
+      </div>) : null}
   </div>
   ):
    (
