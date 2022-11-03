@@ -18,7 +18,7 @@ function header() {
     <div className="flex sticky top-0 z-50 md:px-8 py-2
                      backdrop-blur transition-colors duration-500 lg:z-50 border-b border-slate-900/10 dark:border-slate-50/[0.06] bg-white/75 supports-backdrop-blur:bg-white/60 dark:bg-transparent" >
         <div className="headerlogo relative h-10 w-20  flex-shrink-0 cursor-pointer">
-        <Image fill object-fit="contain" src={logomain} alt={""} />
+        <Image responsive object-fit="contain" src={logomain} alt={""} width={"50"} height={"50"} />
         </div>
 
        <div className="group flex items-center mx-0 md:mx-10  px-3 xl:min-w-[250px] border border-black rounded-md shadow-sm hover:cursor-pointer ">
@@ -66,7 +66,7 @@ function header() {
         <div className=" relative hidden items-center sm:flex md:shrink-0 min-w-10 h-10 w-10 p-1 lg:pl-3 cursor-pointer border-4 border-inherit rounded-full"
              onClick={() => signOut()}>
         <Image 
-        className="-z-1 rounded-full relative"
+        className="-z-1 rounded-full relative overflow-hidden"
          fill object-fit="cover" src={session?.token?.picture? session.token.picture : profilepic} alt={session.user?.name}  />
         </div>
       ): (
